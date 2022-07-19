@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import { getHomeList } from './api';
 import MovieRow from './Components/MovieRow';
 
