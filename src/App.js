@@ -21,7 +21,7 @@ function App() {
       {/* Listas */}
       <section className="lists">
         {movieList.map((item, key) => (
-          <MovieRow key={key} />
+          <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
       {/* Footer */}
