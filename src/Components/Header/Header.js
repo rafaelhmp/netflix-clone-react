@@ -1,9 +1,9 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ black }) => {
   return (
-    <header className="active">
+    <header className={black ? 'active' : ''}>
       <div className="header--logo">
         <a href="/">
           <img
