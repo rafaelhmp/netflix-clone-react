@@ -21,7 +21,14 @@ function App() {
       );
       let chosenOriginal = originals[0].items.results[randomOriginal];
       let chosenInfo = await getMovieInfo(chosenOriginal.id, 'tv');
-      setFeaturedData(chosenInfo);
+
+      // Verifica se o filme escolhido possui imagem de fundo, descrição e pontuação
+      if (
+        chosenInfo.backdrop_path &&
+        chosenInfo.overview &&
+        chosenInfo.vote_average > 6
+      )
+        setFeaturedData(chosenInfo);
     }
     loadAll();
   }, []);
