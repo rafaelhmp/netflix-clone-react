@@ -1,0 +1,14 @@
+footer {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.author {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.author:hover {
+  text-decoration: underline;
+}

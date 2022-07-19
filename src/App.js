@@ -4,6 +4,7 @@ import { getHomeList, getMovieInfo } from './api';
 import MovieRow from './Components/MovieRow';
 import FeaturedMovie from './Components/FeaturedMovie';
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   const [movieList, setMovieList] = React.useState([]);
@@ -52,15 +53,16 @@ function App() {
     <div className="page">
       {/* Header */}
       <Header black={blackHeader} />
-      {/* Destaque */}
+      {/* Filme em destaque */}
       {featuredData && <FeaturedMovie item={featuredData} />}
-      {/* Listas */}
+      {/* Lista de filmes */}
       <section className="lists">
         {movieList.map((item, key) => (
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
       {/* Footer */}
+      <Footer />
     </div>
   );
 }
