@@ -10,7 +10,7 @@ function App() {
 
   React.useEffect(() => {
     async function loadAll() {
-      // Puxando a lista total
+      // Puxando a lista total de filmes/series/documentarios
       let list = await getHomeList();
       setMovieList(list);
 
