@@ -8,7 +8,7 @@ async function basicFetch(endpoint) {
   return json;
 }
 
-const getHomeList = async () => {
+export async function getHomeList() {
   return [
     {
       slug: 'originals',
@@ -67,6 +67,4 @@ const getHomeList = async () => {
       ),
     },
   ];
-};
-
-export default getHomeList();
+}
