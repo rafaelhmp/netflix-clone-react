@@ -30,8 +30,9 @@ function App() {
         chosenInfo.backdrop_path &&
         chosenInfo.overview &&
         chosenInfo.vote_average > 6
-      )
+      ) {
         setFeaturedData(chosenInfo);
+      }
     }
     loadAll();
   }, []);
@@ -63,12 +64,14 @@ function App() {
       </section>
       {/* Footer */}
       <Footer />
-      <div className="loading">
-        <img
-          src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif"
-          alt="Loading"
-        />
-      </div>
+      {movieList.length <= 0 && (
+        <div className="loading">
+          <img
+            src="https://hips.hearstapps.com/pop.h-cdn.co/assets/16/48/1600x800/landscape-1480516731-4f155204-7266-486d-88a5-2018ff11f947.gif?resize=480:*"
+            alt="Loading"
+          />
+        </div>
+      )}
     </div>
   );
 }
