@@ -35,9 +35,6 @@ function App() {
       }
     }
     loadAll();
-  }, []);
-
-  React.useEffect(() => {
     function scrollListener() {
       if (window.scrollY > 10) {
         setBlackHeader(true);
