@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import { getHomeList, getMovieInfo } from './api';
-import MovieRow from './Components/MovieRow';
-import FeaturedMovie from './Components/FeaturedMovie';
+import MovieRow from './Components/MovieRow/MovieRow';
+import FeaturedMovie from './Components/FeaturedMovie/FeaturedMovie';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import Head from './Components/Head';
 
 function App() {
   const [movieList, setMovieList] = React.useState([]);
@@ -25,14 +26,7 @@ function App() {
       let chosenOriginal = originals[0].items.results[randomOriginal];
       let chosenInfo = await getMovieInfo(chosenOriginal.id, 'tv');
 
-      // Verifica se o filme escolhido possui imagem de fundo, descrição e pontuação
-      if (
-        chosenInfo.backdrop_path &&
-        chosenInfo.overview &&
-        chosenInfo.vote_average > 6
-      ) {
-        setFeaturedData(chosenInfo);
-      }
+      setFeaturedData(chosenInfo);
     }
     loadAll();
     function scrollListener() {
@@ -49,6 +43,10 @@ function App() {
 
   return (
     <div className="page">
+      <Head
+        title="Netflix | React Clone"
+        description="Esse é o clone do Netflix usando React."
+      />
       {/* Header */}
       <Header black={blackHeader} />
       {/* Filme em destaque */}
